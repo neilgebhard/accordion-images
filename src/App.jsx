@@ -12,19 +12,19 @@ function App() {
   const [activeIdx, setActiveIdx] = useState(2)
 
   return (
-    <div className='flex w-screen m-5 gap-2 transition'>
+    <div className='flex m-5 gap-2 h-96 transition'>
       {bgImages.map((img, idx) => {
         return (
           <div
-            className={`transition-[flex] ease-in duration-300 relative cursor-pointer h-screen bg-no-repeat bg-cover ${
+            className={`transition-[flex] ease-in duration-300 relative cursor-pointer bg-no-repeat bg-center bg-cover ${
               activeIdx === idx ? 'flex-[5]' : 'flex-[0.5]'
             } ${idx > 3 && 'max-sm:hidden'}`}
             style={{ backgroundImage: `url(${img})` }}
             onClick={() => setActiveIdx(idx)}
           >
             <h3
-              className={`text-white absolute bottom-5 left-5 ${
-                activeIdx !== idx && 'hidden'
+              className={`text-white text-xl font-bold absolute bottom-5 left-5 transition duration-300 delay-100 ${
+                activeIdx !== idx ? 'opacity-0' : 'opacity-100'
               }`}
             >
               Wow nice image
